@@ -63,10 +63,10 @@ class LinearRegression:
     self.b = 0
 
     for i in range(epochs):
-      dj_dw, dj_db = self.gradient(X, y, self.w, self.b)
+      dj_dw, dj_db = self.gradient(X, y)
       self.w -= alpha*dj_dw
       self.b -= alpha*dj_db
-      cost = self.cost(X, y, self.w, self.b)
+      cost = self.cost(X, y)
       self.cost_history.append(cost)
 
     return self
